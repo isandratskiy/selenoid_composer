@@ -1,7 +1,7 @@
 #!/bin/bash
-echo "==============================> Pulling Chrome" 
+echo " ==============================> pulling Chrome  " 
 docker pull selenoid/vnc_chrome:80.0
-echo "==============================> Pulling Firefox"
+echo " ==============================> pulling Firefox "
 docker pull selenoid/vnc_firefox:72.0
-echo "Starting Selenoid Service ... "
-docker-compose up --force-recreate
+echo "starting Selenoid service ...................... "
+docker-compose up -d --force-recreate

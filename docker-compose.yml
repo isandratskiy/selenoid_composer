@@ -1,4 +1,4 @@
-version: '3'
+version: '3.1'
 
 services:
   selenoid:
@@ -6,22 +6,22 @@ services:
     network_mode: bridge
     image: aerokube/selenoid:latest-release
     volumes:
-      - "$PWD:/etc/selenoid"
-      - "/var/run/docker.sock:/var/run/docker.sock"
+      - $PWD:/etc/selenoid
+      - /var/run/docker.sock:/var/run/docker.sock
     command: [
       "-conf", "/etc/selenoid/browsers.json", 
-      "-service-startup-timeout", "3m0s", 
-      "-session-attempt-timeout", "3m0s", 
-      "-session-delete-timeout", "3m0s", 
+      "-service-startup-timeout", "5m0s", 
+      "-session-attempt-timeout", "5m0s", 
+      "-session-delete-timeout", "5m0s", 
       "-timeout", "5m0s"
       ]
     ports:
-      - "4444:4444"
+      - 4444:4444
 
   selenoid-ui:
     container_name: selenoid-ui
     network_mode: bridge
-    image: "aerokube/selenoid-ui:latest-release"
+    image: aerokube/selenoid-ui:latest-release
     depends_on:
       - selenoid
     links:
@@ -30,4 +30,4 @@ services:
       "--selenoid-uri", "http://selenoid:4444"
       ]
     ports:
-      - "8081:8080"
+      - 8081:8080
