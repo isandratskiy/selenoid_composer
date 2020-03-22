@@ -1,4 +1,4 @@
-version: '3.1'
+version: "3.1"
 
 services:
   selenoid:
@@ -8,12 +8,13 @@ services:
     volumes:
       - $PWD:/etc/selenoid
       - /var/run/docker.sock:/var/run/docker.sock
-    command: [
-      "-conf", "/etc/selenoid/browsers.json", 
-      "-service-startup-timeout", "5m0s", 
-      "-session-attempt-timeout", "5m0s", 
-      "-session-delete-timeout", "5m0s", 
-      "-timeout", "5m0s"
+    command:
+      [
+        "-conf", "/etc/selenoid/browsers.json",
+        "-service-startup-timeout", "5m0s",
+        "-session-attempt-timeout", "5m0s",
+        "-session-delete-timeout", "5m0s",
+        "-timeout", "5m0s",
       ]
     ports:
       - 4444:4444
