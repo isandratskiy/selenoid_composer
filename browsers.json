@@ -3,31 +3,25 @@
     "default": "80.0",
     "versions": {
       "80.0": {
-        "image": "selenoid/vnc_chrome:80.0",
-        "port": "4444",
-        "path": "/",
-        "tmpfs": {
-          "/tmp": "size=512m"
-        },
-        "volumes": [
-          "/Users/sandrackii/Projects/automationpractice-github-actions-demo:/etc/selenoid/chrome"
-        ]
-      }
-    }
-  },
-  "firefox": {
-    "default": "72.0",
-    "versions": {
-      "72.0": {
-        "image": "selenoid/vnc_firefox:72.0",
+        "image": "selenoid/vnc:chrome_80.0",
         "port": "4444",
         "path": "/wd/hub",
         "tmpfs": {
           "/tmp": "size=512m"
-        },
-        "volumes": [
-          "/Users/sandrackii/Projects/automationpractice-github-actions-demo:/etc/selenoid/firefox"
-        ]
+        }
+      }
+    }
+  },
+  "firefox": {
+    "default": "74.0",
+    "versions": {
+      "74.0": {
+        "image": "selenoid/vnc:firefox_74.0",
+        "port": "4444",
+        "path": "/wd/hub",
+        "tmpfs": {
+          "/tmp": "size=512m"
+        }
       }
     }
   }

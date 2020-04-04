@@ -27,8 +27,9 @@ services:
       - selenoid
     links:
       - selenoid
-    command: [
-      "--selenoid-uri", "http://selenoid:4444"
+    command: 
+      [
+        "--selenoid-uri", "http://selenoid:4444"
       ]
     ports:
       - 8081:8080
